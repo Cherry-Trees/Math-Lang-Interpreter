@@ -1,0 +1,26 @@
+f(n: int): int := n * f(n - 1);
+f(0) := 0;
+
+
+procedure add_and_print(x, y)
+    z := x + y;
+    print(z);
+endprocedure;
+
+
+for i in 0:10
+    add_and_print(i, i + i);
+    x := 5;
+endfor;
+
+
+
+
+
+
+print(f(5, 6));
+add_and_print(5, 6);
+
+y := x -> x + 1;
+
+g(x) := 
