@@ -4,7 +4,7 @@ query &\to stmt \ \text{SEMICOLON}
 \\
 stmt &\to assign \ | \ procedure \ | \ if \ | \ for \ | \ while
 \\
-assign &\to lvalue \ \text{ASSIGN\_OP} \ rvalue
+assign &\to lvalue \ \text{ASSIGNOP} \ rvalue
 \\
 lvalue &\to \text{ID} \ [\text{LPAREN} \ [paramlist] \ \text{RPAREN} \ | \ \text{LBRACK} \ subscripts \ \text{RBRACK}] \ [typesuffix]
 \\
@@ -18,11 +18,11 @@ type &\to \text{INT} \ | \ \text{REAL}
 \\
 subscripts &\to rvalue \ [\text{COMMA} \ rvalue]
 \\
-rvalue &\to factor \ \text{ADD\_OP} \ rvalue \ | \ factor
+rvalue &\to factor \ \text{ADDOP} \ rvalue \ | \ factor
 \\
-factor &\to power \ \text{MUL\_OP} \ factor \ | \ power
+factor &\to power \ \text{MULOP} \ factor \ | \ power
 \\
-power &\to term \ \text{EXP\_OP} \ power \ | \ term \ | \ \text{LPAREN} \ rvalue \ \text{RPAREN}
+power &\to term \ \text{EXPOP} \ power \ | \ term \ | \ \text{LPAREN} \ rvalue \ \text{RPAREN}
 \\
 term &\to var \ | \ matrix
 \\
@@ -32,7 +32,7 @@ arglist &\to rvalue \ \text{COMMA} \ arglist \ | \ rvalue
 \\
 matrix &\to number \ | \ \text{LBRACK} \ dimensions \ \text{RBRACK}
 \\
-number &\to \text{INT\_LIT} \ | \ \text{REAL\_LIT}
+number &\to \text{INTLIT} \ | \ \text{REALLIT}
 \\
 dimensions &\to arglist \ \text{SEMICOLON} \ dimensions \ | \ arglist
 \\
